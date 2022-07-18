@@ -17,7 +17,6 @@ const getData = () => {
     fetch("data.json")
         .then((response) =>response.json())
         .then((data) => {
-            console.log(data)
             for(var i = 0; i < data.length; i++) {
                 prices[i].innerText = data[i].amount
                 bars[i].style.height = `${data[i].amount * 3}px`
