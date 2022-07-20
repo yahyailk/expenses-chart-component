@@ -13,7 +13,6 @@ bars.forEach((bar)=>{
         bar.previousElementSibling.style.visibility = "hidden"
     })
 })
-
 const getData = () => {
     fetch("data.json")
         .then((response) => {
@@ -27,7 +26,11 @@ const getData = () => {
                 bars[i].style.height = `${data[i].amount * 3}px`
                 days[i].innerText = data[i].day
             }
-        }).catch((err) => errorMessage.innerText = (err))
+        }).catch((err) => errorMSG(err))
 
 }
 getData()
+
+function errorMSG (err) {
+    errorMessage.innerText = err.message
+}
