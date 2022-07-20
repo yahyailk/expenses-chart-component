@@ -26,11 +26,11 @@ const getData = () => {
                 bars[i].style.height = `${data[i].amount * 3}px`
                 days[i].innerText = data[i].day
             }
-        }).catch((err) => errorMSG(err))
+        }).catch((err) => errorMsg(err))
 
 }
 getData()
 
-function errorMSG (err) {
+function errorMsg (err) {
     errorMessage.innerText = err.message
 }
